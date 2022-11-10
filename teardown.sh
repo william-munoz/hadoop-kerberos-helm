@@ -1,13 +1,22 @@
 #! /bin/bash
 
-## TEAR DOWN PVS
-helm delete hdfs-pvs --purge
+## Tear down
+helm -n hdfs list
 
-## TEAR DOWN PODS
-helm delete hdfs-pods --purge
+## Tear down datapopulator
+helm -n hdfs delete datapopulator
 
-## BRING BACK PVS
-helm install -n hdfs-pvs pv 
+## tear down datanode
+helm -n hdfs delete datanode
 
-## BRING BACK PODS
-helm install -n hdfs-pods deployments
+## tear down namenode
+helm -n hdfs delete namenode
+
+## Tear down kdc
+helm -n hdfs delete kdc
+
+## Tear down pv
+helm -n hdfs delete pv
+
+## List Helm charts
+helm -n hdfs list
