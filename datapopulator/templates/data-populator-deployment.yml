@@ -20,7 +20,7 @@ spec:
       - command:
         - /populate-data.sh
         name: data-populator
-        image: 567802622977.dkr.ecr.us-west-2.amazonaws.com/hdfs:0.0.4
+        image: 567802622977.dkr.ecr.us-west-2.amazonaws.com/hdfs:0.0.5
         imagePullPolicy: IfNotPresent
         volumeMounts:
         - mountPath: /var/keytabs
