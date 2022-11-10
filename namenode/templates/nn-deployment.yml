@@ -1,8 +1,12 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nn
 spec:
+  selector:
+    matchLabels:
+      name: hdfs-nn
+      kerberosService: nn
   replicas: 1
   template:
     metadata:
@@ -18,7 +22,7 @@ spec:
         name: nn
         ports:
         - containerPort: 9000
-        image: hadoop-base:latest
+        image: 567802622977.dkr.ecr.us-west-2.amazonaws.com/hdfs:0.0.4
         imagePullPolicy: IfNotPresent
         volumeMounts:
         - mountPath: /var/keytabs

@@ -40,15 +40,15 @@
   </property>
   <property>
     <name>dfs.namenode.kerberos.principal</name>
-    <value>hdfs/nn.default.svc.cluster.local@CLUSTER.LOCAL</value>
+    <value>hdfs/nn.hdfs.svc.cluster.local@CLUSTER.LOCAL</value>
   </property>
   <property>
     <name>dfs.namenode.kerberos.internal.spnego.principal</name>
-    <value>HTTP/nn.default.svc.cluster.local@CLUSTER.LOCAL</value>
+    <value>HTTP/nn.hdfs.svc.cluster.local@CLUSTER.LOCAL</value>
   </property>
   <property>
     <name>dfs.namenode.rpc-address</name>
-    <value>nn.default.svc.cluster.local:9000</value>
+    <value>nn.hdfs.svc.cluster.local:9000</value>
   </property>
 
 
@@ -91,11 +91,11 @@
   </property>
   <property>
     <name>dfs.namenode.kerberos.principal</name>
-    <value>hdfs/nn.default.svc.cluster.local@CLUSTER.LOCAL</value>
+    <value>hdfs/nn.hdfs.svc.cluster.local@CLUSTER.LOCAL</value>
   </property>
   <property>
     <name>dfs.namenode.kerberos.internal.spnego.principal</name>
-    <value>HTTP/nn.default.svc.cluster.local@CLUSTER.LOCAL</value>
+    <value>HTTP/nn.hdfs.svc.cluster.local@CLUSTER.LOCAL</value>
   </property>
 
   <!-- prevent those errors -->
@@ -125,7 +125,7 @@
   </property>
   <property>
     <name>dfs.datanode.kerberos.principal</name>
-    <value>hdfs/dn1.default.svc.cluster.local@CLUSTER.LOCAL</value>
+    <value>hdfs/dn1.hdfs.svc.cluster.local@CLUSTER.LOCAL</value>
   </property>
   <property>
     <name>dfs.encrypt.data.transfer</name>
@@ -147,7 +147,7 @@
   </property>
   <property>
     <name>dfs.web.authentication.kerberos.principal</name>
-    <value>HTTP/dn1.default.svc.cluster.local@CLUSTER.LOCAL</value>
+    <value>HTTP/dn1.hdfs.svc.cluster.local@CLUSTER.LOCAL</value>
   </property>
   <property>
     <name>dfs.web.authentication.kerberos.keytab</name>

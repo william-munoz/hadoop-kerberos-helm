@@ -1,8 +1,12 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kerberos
 spec:
+  selector:
+    matchLabels:
+      name: hdfs-kerberos
+      kerberosService: kerberos
   replicas: 1
   template:
     metadata:
@@ -16,7 +20,7 @@ spec:
       - command:
         - /start-kdc.sh
         name: kerberos
-        image: hadoop-base:latest
+        image: 567802622977.dkr.ecr.us-west-2.amazonaws.com/hdfs:0.0.4
         imagePullPolicy: IfNotPresent
         volumeMounts:
         - mountPath: /var/keytabs

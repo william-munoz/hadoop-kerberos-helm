@@ -13,33 +13,33 @@ If you are using minikube, create the paths:
 
 #### 4. Start PVCs
 ```
-helm install -n hdfs-pvs pv
+helm -n hdfs install pv ./pv/
 ```
 #### 5. Start Pods
 
 a. KDC Node
 ```
-helm install -n hdfs-kdc kdc
+helm -n hdfs install kdc ./kdc/
 ```
 b. NN Node
 ```
-helm install -n hdfs-nn namenode
+helm -n hdfs install namenode ./namenode/
 ```
 
 c. DN Node
 ```
-helm install -n hdfs-dn datanode
+helm -n hdfs install datanode ./datanode/
 ```
 
 d. DataPopulator Node
 ```
-helm install -n hdfs-dp datapopulator
+helm -n hdfs install datapopulator ./datapopulator
 ```
 
 #### 6. Run kinit in any node
 ```
 kubectl exec -it <POD_NAME> -- /bin/bash
 su hdfs
-kinit -kt /var/keytabs/hdfs.keytab hdfs/nn.default.svc.cluster.local
+kinit -kt /var/keytabs/hdfs.keytab hdfs/nn.hdfs.svc.cluster.local
 hdfs dfs -ls /
 ```

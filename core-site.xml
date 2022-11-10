@@ -29,7 +29,7 @@
 
   <property>
     <name>fs.defaultFS</name>
-    <value>hdfs://nn.default.svc.cluster.local:9000</value>
+    <value>hdfs://nn.hdfs.svc.cluster.local:9000</value>
   </property>
 
   <property>
